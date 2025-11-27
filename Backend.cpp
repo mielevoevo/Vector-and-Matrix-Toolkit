@@ -17,41 +17,51 @@ class VectorType
         Vector_Size(0){}
 
     //Parameterized Constructor
-    VectorType(int x): 
-        Vector_Size(x)
+    VectorType(int size): 
+        Vector_Size(size)
         {
-            int Vector[Vector_Size];
+            cout << "Input the Vector's Elements!" << endl;
+            double Vector[Vector_Size];
             for (int i = 0; i<Vector_Size; i++)
             {
                 cin >> Vector[i]; 
             }
         }
-
+    
     //printVector Function
      void printVector()
      {
-        cout << "Vector = [";
+        double Vector[Vector_Size];
+        cout << "[";
         for (int i = 0; i<Vector_Size; i++)
         {
-            cout << Vector[i]
+            if (i<Vector_Size-1)
+                {
+                    cout << Vector[i] << ", ";
+                }
+            else
+                {
+                    cout << Vector[i];
+                }
         }
+        cout << "]";
      }
+     
 };
 
 //DEBUGGING AND TESTING
 int main()
 {
-    int x1,y1,z1;
-    int x2,y2,z2;
+    int n1,n2;
 
     //Input Vector 1 & 2
-    cin >> x1 >> y1 >> z1
-        >> x2 >> y2 >> z2;
+    cin >> n1;
 
-    VectorType v1(x1, y1, z1);
-    VectorType v2(x2, y2, z2);
+    VectorType v1(n1);
+    v1.printVector();
+
 
     //Show 2 Vectors
-    v1.printVector();
-    v2.printVector();
+    //v1.printVector();
+    //v2.printVector();
 }
