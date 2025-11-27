@@ -9,27 +9,32 @@ class VectorType
 {
     private:
     //Parameters
-        int x_mag;
-        int y_mag;
-        int z_mag;
+        int Vector_Size;
     
     public:
     //Default Contructor
     VectorType():
-        x_mag(0), y_mag(0), z_mag(0){}
+        Vector_Size(0){}
 
     //Parameterized Constructor
-    VectorType(int x, int y, int z): 
-        x_mag(x), y_mag(y), z_mag(z){}
+    VectorType(int x): 
+        Vector_Size(x)
+        {
+            int Vector[Vector_Size];
+            for (int i = 0; i<Vector_Size; i++)
+            {
+                cin >> Vector[i]; 
+            }
+        }
 
-    //Show Vector Function
+    //printVector Function
      void printVector()
      {
-        cout << "Vector = [" 
-             << x_mag << ", "
-             << y_mag << ", "
-             << z_mag << "]"
-             << endl;
+        cout << "Vector = [";
+        for (int i = 0; i<Vector_Size; i++)
+        {
+            cout << Vector[i]
+        }
      }
 };
 
