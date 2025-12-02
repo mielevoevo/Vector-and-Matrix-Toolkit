@@ -23,7 +23,6 @@ class VectorType
     double outerProduct(const VectorType& other) const;
 
     // C. Operator Overloading
-
     VectorType operator+(const VectorType& other) const;
     VectorType operator-(const VectorType& other) const;
     VectorType operator*(double scalar) const;
